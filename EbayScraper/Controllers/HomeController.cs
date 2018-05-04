@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EbayScraper.ScraperClasses;
 
 namespace EbayScraper.Controllers
 {
@@ -25,6 +26,13 @@ namespace EbayScraper.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public string Scrape(string id)
+        {
+            HtmlConnection htmlConnection = new HtmlConnection();
+            string jsonreturn = htmlConnection.ParseEbay(id);
+            return jsonreturn;
         }
     }
 }
