@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using EbayScraper.ScraperClasses;
@@ -14,24 +15,10 @@ namespace EbayScraper.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public string Scrape(string id)
+        public async Task<string> Scrape(string id)
         {
             HtmlConnection htmlConnection = new HtmlConnection();
-            string jsonreturn = htmlConnection.ParseEbay(id);
+            string jsonreturn = await htmlConnection.ParseEbay(id);
             return jsonreturn;
         }
     }

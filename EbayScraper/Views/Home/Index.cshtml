@@ -6,15 +6,24 @@
     <h1>Ebay Scraper</h1>
 </div>
 
-<div class="container" id="searchcontainer">
-    
-    <input type="text" id="ScrapeSearchTerm"/>
-    <button id="StartScrapeButton" class="btn btn-default"> Start Scrape </button>
+<div class="container">
+    <div class="container col-md-4" id="searchcontainer">
+        <div class="form-group">
+            <label for="ScrapeSearchTerm">Search Term</label>
+            <input type="text" class="form-control" id="ScrapeSearchTerm" />
+        </div>
+        <button id="StartScrapeButton" class="btn btn-default"> Start Scrape </button>
 
+    </div>
+
+    <div class="container col-md-4" id="averagecalc" >
+
+    </div>
 </div>
 
 <div id="scraperesultscontainer" class="container">
 
 </div>
+
 
 

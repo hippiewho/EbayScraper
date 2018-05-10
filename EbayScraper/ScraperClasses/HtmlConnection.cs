@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using EbayScraper.Models;
 using HtmlAgilityPack;
@@ -14,19 +15,13 @@ namespace EbayScraper.ScraperClasses
         private string EbayBaseUrl { get; } = "https://www.ebay.com/sch/i.html?_nkw=";
         private JsonContainer _jsonContainer;
 
-        public string ParseEbay(string id)
+        public async Task<string> ParseEbay(string id)
         {
             string term = id;
             var searchurl = EbayBaseUrl + term;
-
-            _jsonContainer = HtmlScraper.BeginEbayScrape(searchurl);
-            
+            EbayScraper ebayScraper = new EbayScraper();
+            _jsonContainer = await ebayScraper.BeginScrapeAsync(searchurl);
             return _jsonContainer.ConvertListToJsonString();
-        }
-
-        private string ParseEbayListings(string term)
-        {
-            throw new NotImplementedException();
         }
     }
 }
