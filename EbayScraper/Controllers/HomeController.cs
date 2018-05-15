@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using EbayScraper.ScraperClasses;
+using Scraper.ScraperClasses;
 
-namespace EbayScraper.Controllers
+namespace Scraper.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,10 +15,10 @@ namespace EbayScraper.Controllers
             return View();
         }
 
-        public async Task<string> Scrape(string id)
+        public async Task<string> Scrape(string term, string scraper)
         {
             HtmlConnection htmlConnection = new HtmlConnection();
-            string jsonreturn = await htmlConnection.ParseEbay(id);
+            string jsonreturn = await htmlConnection.ParseEbay(term, scraper);
             return jsonreturn;
         }
     }

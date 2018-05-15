@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EbayScraper.Models;
 using HtmlAgilityPack;
+using Scraper.Models;
 
-namespace EbayScraper.ScraperClasses.Interfaces
+namespace Scraper.ScraperClasses.Interfaces
 {
     interface IScraper
     {

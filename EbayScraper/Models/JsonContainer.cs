@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using Newtonsoft.Json;
 
-namespace EbayScraper.Models
+namespace Scraper.Models
 {
     public class JsonContainer
     {
@@ -16,7 +16,7 @@ namespace EbayScraper.Models
         {
             _items = new List<Item>();
         }
-        public void addItem(string imageurl, string title, string price)
+        public void AddItem(string imageurl, string title, string price)
         {
             _items.Add(new Item(imageurl, title, price));
         }

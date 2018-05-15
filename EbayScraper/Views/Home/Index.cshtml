@@ -3,7 +3,7 @@
 }
 
 <div class="jumbotron">
-    <h1>Ebay Scraper</h1>
+    <h1 style="text-align: center">Web Store Scraper</h1>
 </div>
 
 <div class="container">
@@ -11,6 +11,8 @@
         <div class="form-group">
             <label for="ScrapeSearchTerm">Search Term</label>
             <input type="text" class="form-control" id="ScrapeSearchTerm" />
+            <label class="radio-inline"><input type="radio" name="scrapertype" value="ebay" checked="checked"/>Ebay Scraper</label>
+            <label class="radio-inline"><input type="radio" name="scrapertype" value="amazon"/>Amazon Scraper</label>
         </div>
         <button id="StartScrapeButton" class="btn btn-default"> Start Scrape </button>
 

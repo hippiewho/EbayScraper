@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace EbayScraper
+namespace Scraper
 {
     public class BundleConfig
     {
@@ -26,6 +26,9 @@ namespace EbayScraper
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/scraper").Include(
+                      "~/Scripts/ScraperScripts.js"));
         }
     }
 }
